@@ -1,4 +1,4 @@
-package org.algorithms.baekjoon;
+package org.algorithms.baekjoon.silver;
 
 import java.io.BufferedReader;
 import java.io.IOException;
