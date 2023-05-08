@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.StringTokenizer;
 
 /**
@@ -25,7 +26,9 @@ public class Douzone_baseball {
     private static int COUNT = 0;
 
     private static File RECORD_FILE =
-        new File("/Users/gwanii/Documents/알고리즘/algorithms/src/main/resources/baseball.txt");
+        new File("src/main/resources/baseball.txt");
+
+    private static boolean GAME_FLAG = false;
 
     private static int MINUTE = 0;
     private static int SECOND = 0;
@@ -41,15 +44,15 @@ public class Douzone_baseball {
 
         resultList = getNumberList(result);
 
-        boolean signal = false;
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        while (!signal) {
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        while (!GAME_FLAG) {
             int input = Integer.parseInt(br.readLine());
 
-            signal = play(input);
+            GAME_FLAG = play(input);
         }
 
+        br.close();
         System.out.println("(종료)");
 
         long endTime = System.currentTimeMillis();
@@ -58,7 +61,6 @@ public class Douzone_baseball {
 
         Record newRecord = new Record(result, COUNT, MINUTE, SECOND);
         recordGame(newRecord);
-
     }
 
     private static boolean play(int input) {
@@ -98,7 +100,11 @@ public class Douzone_baseball {
         for (int i = 0; i < stringValue.length(); i++) {
             list.add(stringValue.charAt(i) - '0');
         }
-
+//        while (value > 0) {
+//            int temp = value % 10;
+//            value = value / 10;
+//            list.add(temp);
+//        }
         return list;
     }
 

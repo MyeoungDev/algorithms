@@ -18,6 +18,23 @@ public class Douzone_08 {
         arr.add(new A("D"));
 
         arr.forEach(System.out::println);
+
+        ArrayList<A> list = new ArrayList<>();
+        list.add(new A("1"));
+        list.add(new A("2"));
+        list.set(0, new A("0"));
+        list.add(0, new A("10"));
+
+        System.out.println();
+
+        list.forEach(System.out::println);
+
+
+        StringBuilder sb = new StringBuilder("hello");
+        String str = "hello";
+        String str1 = "hello";
+        System.out.println(str.hashCode() == str1.hashCode());
+        System.out.println(sb.hashCode() == str1.hashCode());
     }
 
 }
