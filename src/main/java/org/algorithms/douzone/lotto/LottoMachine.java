@@ -27,6 +27,9 @@ public class LottoMachine {
 
     public void running() {
 
+        /**
+         * while을 사용한 코드
+         */
         List<Ball> selectedBalls = new ArrayList<>();
         Random random = new Random();
 
@@ -43,6 +46,16 @@ public class LottoMachine {
             sb.append(ball);
             i++;
         }
+
+        /**
+         * stream 을 이용해서 짜본 코드
+         */
+//        Collections.shuffle(lottoBalls);
+//        lottoBalls.stream()
+//            .filter(o -> !o.isExit())
+//            .limit(6)
+//            .forEach(o -> sb.append(o.selectBall()));
+
 
         System.out.println(sb);
 

@@ -34,17 +34,12 @@ public class Ball {
         return Objects.hash(number);
     }
 
-
     public int getNumber() {
         return number;
     }
 
     public boolean isExit() {
         return isExit;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
     }
 
     public void setExit() {
