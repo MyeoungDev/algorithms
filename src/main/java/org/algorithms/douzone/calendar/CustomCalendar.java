@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.time.LocalDate;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 
 /**
@@ -21,12 +22,8 @@ public class CustomCalendar {
         String input = br.readLine();
         StringTokenizer st = new StringTokenizer(input, "년 월");
 
-        int year = 0;
-        int month = 0;
-        while (st.hasMoreTokens()) {
-            year = Integer.parseInt(st.nextToken());
-            month = Integer.parseInt(st.nextToken());
-        }
+        int year = Integer.parseInt(st.nextToken());
+        int month = Integer.parseInt(st.nextToken());
 
         LocalDate date = LocalDate.of(year, month, FIRST_DAY);
 
