@@ -22,7 +22,7 @@ public class Boj_1259 {
 
         String line;
         while (!(line = br.readLine()).equals(END_CONDITION)) {
-            if (line.startsWith("0")) {
+            if (line.startsWith(END_CONDITION)) {
                 sb.append(NO);
                 sb.append("\n");
                 return;
