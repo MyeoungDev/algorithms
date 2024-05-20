@@ -1,7 +1,5 @@
 package org.algorithms.baekjoon.silver.tree;
 
-import static org.algorithms.baekjoon.silver.tree.Boj_1991.sb;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -39,85 +37,87 @@ public class Boj_1991 {
 
         System.out.println(sb);
     }
+
+    static class Node {
+        char value;
+        Node left;
+        Node right;
+
+        public Node(char value) {
+            this.value = value;
+        }
+    }
+
+    static class Tree {
+        Node root;
+
+        void insert(char thisNode, char left, char right) {
+            if (root == null) {
+                root = new Node(thisNode);
+                if (left != '.') {
+                    root.left = new Node(left);
+                }
+                if (right != '.') {
+                    root.right = new Node(right);
+                }
+            } else {
+                search(root, thisNode, left, right);
+            }
+        }
+
+        void search(Node root, char thisNode, char left, char right) {
+            if (root == null) {
+                return;
+            }
+
+            if (root.value == thisNode) {
+                if (left != '.') {
+                    root.left = new Node(left);
+                }
+                if (right != '.') {
+                    root.right = new Node(right);
+                }
+            } else {
+                search(root.left, thisNode, left, right);
+                search(root.right, thisNode, left, right);
+            }
+        }
+
+
+        void preorder(Node root) {
+
+            sb.append(root.value);
+
+            if (root.left != null) {
+                preorder(root.left);
+            }
+
+            if (root.right != null) {
+                preorder(root.right);
+            }
+        }
+
+        void inorder(Node root) {
+            if (root.left != null) {
+                inorder(root.left);
+            }
+            sb.append(root.value);
+            if (root.right != null) {
+                inorder(root.right);
+            }
+        }
+
+        void postorder(Node root) {
+            if (root.left != null) {
+                postorder(root.left);
+            }
+            if (root.right != null) {
+                postorder(root.right);
+            }
+            sb.append(root.value);
+        }
+
+    }
+
 }
 
-class Node {
-    char value;
-    Node left;
-    Node right;
-
-    public Node(char value) {
-        this.value = value;
-    }
-}
-
-class Tree {
-    Node root;
-
-    void insert(char thisNode, char left, char right) {
-        if (root == null) {
-            root = new Node(thisNode);
-            if (left != '.') {
-                root.left = new Node(left);
-            }
-            if (right != '.') {
-                root.right = new Node(right);
-            }
-        } else {
-            search(root, thisNode, left, right);
-        }
-    }
-
-    void search(Node root, char thisNode, char left, char right) {
-        if (root == null) {
-            return;
-        }
-
-        if (root.value == thisNode) {
-            if (left != '.') {
-                root.left = new Node(left);
-            }
-            if (right != '.') {
-                root.right = new Node(right);
-            }
-        } else {
-            search(root.left, thisNode, left, right);
-            search(root.right, thisNode, left, right);
-        }
-    }
-
-
-    void preorder(Node root) {
-
-        sb.append(root.value);
-
-        if (root.left != null) {
-            preorder(root.left);
-        }
-
-        if (root.right != null) {
-            preorder(root.right);
-        }
-    }
-
-    void inorder(Node root) {
-        if (root.left != null) {
-            inorder(root.left);
-        }
-        sb.append(root.value);
-        if (root.right != null) {
-            inorder(root.right);
-        }
-    }
-
-    void postorder(Node root) {
-        if (root.left != null) {
-            postorder(root.left);
-        }
-        if (root.right != null) {
-            postorder(root.right);
-        }
-        sb.append(root.value);
-    }
-
-}
