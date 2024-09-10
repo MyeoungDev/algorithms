@@ -13,9 +13,11 @@ local.properties
 .settings/
 .loadpath
 .recommenders
-
+.idea
 # External tool builders
 .externalToolBuilders/
+
+src/main/java/org/algorithms/interview/nhn
 
 # Locally stored "Eclipse launch configurations"
 *.launch
