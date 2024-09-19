@@ -15,7 +15,7 @@ public class Boj_1475 {
     private static int[] NUMBER_SET = new int[10];
     public static void main(String[] args) throws IOException {
 
-        BufferedReader 현br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String roomNumber = br.readLine();
 
         for (int i = 0; i < roomNumber.length(); i++) {
