@@ -17,7 +17,8 @@ local.properties
 # External tool builders
 .externalToolBuilders/
 
-src/main/java/org/algorithms/interview/secret
+# repository secret
+/src/main/java/org/algorithms/interview/secret/*
 
 # Locally stored "Eclipse launch configurations"
 *.launch
