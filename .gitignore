@@ -17,7 +17,7 @@ local.properties
 # External tool builders
 .externalToolBuilders/
 
-src/main/java/org/algorithms/interview/nhn
+src/main/java/org/algorithms/interview/secret
 
 # Locally stored "Eclipse launch configurations"
 *.launch
@@ -135,6 +135,8 @@ atlassian-ide-plugin.xml
 
 # SonarLint plugin
 .idea/sonarlint/
+.idea/sonarlint/issuestore
+.idea/sonarlint/securityhotspotstore
 
 # Crashlytics plugin (for Android Studio and IntelliJ)
 com_crashlytics_export_strings.xml
