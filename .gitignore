@@ -14,9 +14,19 @@ local.properties
 .loadpath
 .recommenders
 .idea
-.idea/
 # External tool builders
 .externalToolBuilders/
+
+# etc...
+checkstyle-idea.xml
+compiler.xml
+encodings.xml
+index.pb
+intellij-javadocs-4.0.1.xml
+jarRepositories.xml
+misc.xml
+uiDesigner.xml
+vcs.xml
 
 # repository secret
 /src/main/java/org/algorithms/interview/secret/*
