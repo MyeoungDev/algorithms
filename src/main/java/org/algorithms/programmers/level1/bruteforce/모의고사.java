@@ -19,6 +19,7 @@ public class 모의고사 {
 
         int[] scores = new int[3];
 
+
         for (int i = 0; i < answers.length; i++) {
 
             if(answers[i] == first[i % first.length]) {
